@@ -14,6 +14,8 @@ group :test do
 	gem 'capybara'
 end
 
+#For Red-Green-Refactor Colouring of tests(For Windows Command Prompt Users Only)
+gem 'win32console'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -34,6 +36,8 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
