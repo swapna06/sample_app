@@ -7,6 +7,8 @@ gem 'rails', '4.0.2'
 group :development, :test do 
 	gem 'sqlite3'
 	gem 'rspec-rails'
+	#For Red-Green-Refactor Colouring of tests(For Windows Command Prompt Users Only)
+	gem 'win32console'
 end
 
 group :test do 
@@ -14,8 +16,7 @@ group :test do
 	gem 'capybara'
 end
 
-#For Red-Green-Refactor Colouring of tests(For Windows Command Prompt Users Only)
-gem 'win32console'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
