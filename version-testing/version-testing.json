@@ -1,0 +1,41 @@
+{
+  "name" : "version-testing",
+  "jobMode" : "VISUAL",
+  "description" : "",
+  "role" : "arn:aws-us-gov:iam::243732871414:role/Admin",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 1
+  },
+  "command" : {
+    "name" : "glueetl",
+    "scriptLocation" : "s3://aws-glue-assets-243732871414-us-gov-west-1/scripts/version-testing.py",
+    "pythonVersion" : "3"
+  },
+  "defaultArguments" : {
+    "--enable-metrics" : "true",
+    "--enable-spark-ui" : "true",
+    "--spark-event-logs-path" : "s3://aws-glue-assets-243732871414-us-gov-west-1/sparkHistoryLogs/",
+    "--enable-job-insights" : "true",
+    "--enable-observability-metrics" : "true",
+    "--enable-glue-datacatalog" : "true",
+    "--enable-continuous-cloudwatch-log" : "true",
+    "--job-bookmark-option" : "job-bookmark-disable",
+    "--job-language" : "python",
+    "--TempDir" : "s3://aws-glue-assets-243732871414-us-gov-west-1/temporary/"
+  },
+  "maxRetries" : 0,
+  "allocatedCapacity" : 10,
+  "timeout" : 2880,
+  "maxCapacity" : 10.0,
+  "glueVersion" : "4.0",
+  "numberOfWorkers" : 10,
+  "workerType" : "G.1X",
+  "executionClass" : "STANDARD",
+  "codeGenConfigurationNodes" : "{\"node-1738949758732\":{\"S3CsvSource\":{\"AdditionalOptions\":{\"EnableSamplePath\":false,\"SamplePath\":\"s3://amzn-assets-4287414-pdt-243732871414/pipelines_aggregate_transform_4287414/0006ce44-dfa3-4e58-afe0-cf44bf780b0f/bars-manifest-signature.json\"},\"Escaper\":\"\",\"Exclusions\":[],\"Name\":\"Amazon S3\",\"OptimizePerformance\":false,\"OutputSchemas\":[{\"Columns\":[{\"Name\":\"KeyId\",\"Type\":\"string\"},{\"Name\":\"Signature\",\"Type\":\"string\"},{\"Name\":\"SigningAlgorithm\",\"Type\":\"string\"},{\"Name\":\"HashAlgorithm\",\"Type\":\"string\"}]}],\"Paths\":[\"s3://amzn-assets-4287414-pdt-243732871414\"],\"QuoteChar\":\"quote\",\"Recurse\":true,\"Separator\":\"comma\",\"WithHeader\":true}}}",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "sample_app",
+    "branch" : "master",
+    "folder" : "version-testing"
+  }
+}
